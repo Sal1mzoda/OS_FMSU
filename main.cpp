@@ -30,7 +30,7 @@ int main() {
         vec[i] = std::rand() % 100;
     }
 
-    // ---- 1. Îäíîïîòî÷íàÿ ñóììà ----
+
     std::clock_t startSingle = std::clock();
 
     long long sumSingle = 0;
@@ -42,7 +42,7 @@ int main() {
 
     cout << "Однопоточная сумма: " << sumSingle << endl;
     cout << "Время (1 поток): " << timeSingle << " сек" << endl << endl;
-    // ---- 2. Ìíîãîïîòî÷íàÿ ñóììà ----
+   
     int numThreads = 4;
     std::vector<long long> partialSums(numThreads, 0);
     std::vector<thread> threads;
@@ -73,4 +73,5 @@ int main() {
     cout << "Время (" << numThreads << " потоков): " << timeMulti << " сек" << endl;
     return 0;
 }
+
 
