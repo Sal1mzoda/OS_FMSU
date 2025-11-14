@@ -30,7 +30,7 @@ int main() {
         vec[i] = std::rand() % 100;
     }
 
-    // ---- 1. Однопоточная сумма ----
+    // ---- 1. ГЋГ¤Г­Г®ГЇГ®ГІГ®Г·Г­Г Гї Г±ГіГ¬Г¬Г  ----
     std::clock_t startSingle = std::clock();
 
     long long sumSingle = 0;
@@ -40,10 +40,9 @@ int main() {
 
     double timeSingle = static_cast<double>(std::clock() - startSingle) / CLOCKS_PER_SEC;
 
-    cout << "Однопоточная сумма: " << sumSingle << endl;
-    cout << "Время (1 поток): " << timeSingle << " сек" << endl << endl;
-
-    // ---- 2. Многопоточная сумма ----
+    cout << "РћРґРЅРѕРїРѕС‚РѕС‡РЅР°СЏ СЃСѓРјРјР°: " << sumSingle << endl;
+    cout << "Р’СЂРµРјСЏ (1 РїРѕС‚РѕРє): " << timeSingle << " СЃРµРє" << endl << endl;
+    // ---- 2. ГЊГ­Г®ГЈГ®ГЇГ®ГІГ®Г·Г­Г Гї Г±ГіГ¬Г¬Г  ----
     int numThreads = 4;
     std::vector<long long> partialSums(numThreads, 0);
     std::vector<thread> threads;
@@ -70,8 +69,8 @@ int main() {
 
     double timeMulti = static_cast<double>(std::clock() - startMulti) / CLOCKS_PER_SEC;
 
-    cout << "Многопоточная сумма: " << sumMulti << endl;
-    cout << "Время (" << numThreads << " потоков): " << timeMulti << " сек" << endl;
-
+    cout << "РњРЅРѕРіРѕРїРѕС‚РѕС‡РЅР°СЏ СЃСѓРјРјР°: " << sumMulti << endl;
+    cout << "Р’СЂРµРјСЏ (" << numThreads << " РїРѕС‚РѕРєРѕРІ): " << timeMulti << " СЃРµРє" << endl;
     return 0;
 }
+
